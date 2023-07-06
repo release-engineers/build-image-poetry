@@ -12,6 +12,10 @@ RUN curl -fsSL https://raw.githubusercontent.com/docker/docker-install/c2de08117
     && sh get-docker.sh \
     && rm get-docker.sh
 
+ENV HOME /github/home
+
+RUN mkdir -p $HOME
+
 RUN git config --global --add safe.directory '*'
 
 ENTRYPOINT ["/bin/bash", "-c"]
