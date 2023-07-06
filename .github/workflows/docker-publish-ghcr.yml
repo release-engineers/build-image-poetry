@@ -1,6 +1,9 @@
 name: Publish to GHCR
 
 on:
+  push:
+    branches:
+      - "master"
   workflow_dispatch:
 
 permissions:
