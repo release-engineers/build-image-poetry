@@ -14,7 +14,7 @@ command=$1
 
 if [[ $command == "publish-ghcr" ]]; then
   debug
-  echo $GITHUB_PACKAGES_TOKEN | docker login ghcr.io --username release-engineers --password-stdin
+  echo $GITHUB_TOKEN | docker login ghcr.io --username release-engineers --password-stdin
   image_tag="ghcr.io/release-engineers/build-image-poetry:latest"
   docker build --tag "${image_tag}" .
   docker push "${image_tag}"
