@@ -1,5 +1,7 @@
 # build-image-poetry
 
+[![Status: Production ready](https://img.shields.io/badge/status-production_ready-green)](https://release-engineers.com/open-source-badges/)
+
 Docker image for building Python projects with Poetry.
 
 Used by [poetry-template](https://github.com/release-engineers/poetry-template/) projects.
