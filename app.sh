@@ -12,6 +12,12 @@ function debug() {
 
 command=$1
 
+if [[ $command == "build" ]]; then
+  debug
+  docker build .
+  exit 0
+fi
+
 if [[ $command == "publish-ghcr" ]]; then
   debug
   echo $GITHUB_TOKEN | docker login ghcr.io --username release-engineers --password-stdin
@@ -27,6 +33,7 @@ fi
 
 echo "Usage: $0 <command>"
 echo "Commands:"
+echo "  build            -- build the Docker image without a tag"
 echo "  publish-ghcr     -- build and publish the Docker image to the GitHub container registry"
 
 exit 1
