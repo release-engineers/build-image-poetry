@@ -11,7 +11,7 @@ permissions:
   packages: write
 
 jobs:
-  build:
+  publish-ghcr:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
